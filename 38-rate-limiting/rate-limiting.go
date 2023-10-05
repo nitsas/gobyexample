@@ -87,6 +87,7 @@ func main() {
 	//       But if we sleep for 3+ seconds, then all requests are executed
 	//       in quick succession. It's as if the bursty limiter gets filled-in
 	//       beyond its capacity. :/
+	//       The same happens with the original example code.
 	// TODO: Revisit this later.
 	time.Sleep(2 * time.Second)
 	requests2 <- 10
