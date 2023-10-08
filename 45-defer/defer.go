@@ -44,9 +44,15 @@ func main() {
 	defer closeFile(f)
 	writeFile(f, "Hello world!")
 
-	// Will the deferred closeFile(f) run if we get a panic here? Yes it will.
+	// Will the deferred closeFile(f) run if we get a panic here?
+	// Answer: Yes it will.
 	// panic("Panic before the end. Will deferred closeFile(f) run?")
 
 	// If you want to see an error in closeFile, uncomment this 2nd close:
 	// f.Close()
+
+	// What happens if I defer one more thing?
+	// Answer: All the deferred functions will run, in reverse order.
+	// So this will run before closeFile().
+	// defer func() { fmt.Println("2nd deferred function!") }()
 }
