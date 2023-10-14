@@ -12,36 +12,36 @@ type point struct {
 func main() {
 	p := point{1, 2}
 
-	fmt.Printf("p (%%v): %v\n", p)
-	fmt.Printf("p (%%+v): %+v\n", p)
-	fmt.Printf("p (%%#v): %#v\n", p)
-	fmt.Printf("type of p (%%T): %T\n", p)
+	fmt.Printf("p (struct %%v): %v\n", p)
+	fmt.Printf("p (struct-with-fields %%+v): %+v\n", p)
+	fmt.Printf("p (struct-constructor %%#v): %#v\n", p)
+	fmt.Printf("p (type-of %%T): %T\n", p)
 	fmt.Println()
 
-	fmt.Printf("true (%%t): %t\n", true)
-	fmt.Printf("123 (%%d): %d\n", 123)
-	fmt.Printf("binary 123 (%%b): %b\n", 123)
-	fmt.Printf("hex 123 (%%x): %x\n", 123)
-	fmt.Printf("char 33 (%%c): %c\n", 33)
-	fmt.Printf("pointer &p (%%p): %p\n", &p)
+	fmt.Printf("true (boolean %%t): %t\n", true)
+	fmt.Printf("123 (integer-base-10 %%d): %d\n", 123)
+	fmt.Printf("123 (binary %%b): %b\n", 123)
+	fmt.Printf("123 (hex %%x): %x\n", 123)
+	fmt.Printf("33 (character %%c): %c\n", 33)
+	fmt.Printf("&p (pointer %%p): %p\n", &p)
 
 	flt := 1230000.45
-	fmt.Printf("1230000.45 (%%f): %f\n", flt)
-	fmt.Printf("1230000.45 (%%e): %e\n", flt)
-	fmt.Printf("1230000.45 (%%E): %E\n", flt)
+	fmt.Printf("1230000.45 (float %%f): %f\n", flt)
+	fmt.Printf("1230000.45 (scientific-e %%e): %e\n", flt)
+	fmt.Printf("1230000.45 (scientific-E %%E): %E\n", flt)
 	fmt.Println()
 
 	s := "string"
-	fmt.Printf("\"string\" (%%s): %s\n", s)
-	fmt.Printf("\"string\" (%%q): %q\n", s)
-	fmt.Printf("base 16 \"string\" (%%x): %x\n", s)
+	fmt.Printf("\"string\" (string %%s): %s\n", s)
+	fmt.Printf("\"string\" (string-quoted %%q): %q\n", s)
+	fmt.Printf("base 16 \"string\" (hex-base-16 %%x): %x\n", s)
 	fmt.Println()
 
-	fmt.Printf("fixed-width 123 (%%6d): %6d\n", 123)
-	fmt.Printf("fixed-width 1.2 (%%6.2f): %6.2f\n", 1.2)
-	fmt.Printf("left-justify 1.2, 1.3 (%%-6.2f): %-6.2f, %-6.2f\n", 1.2, 1.3)
-	fmt.Printf("fixed-width \"hi\" (%%6s): %6s\n", "hi")
-	fmt.Printf("left-justify \"ho\", \"ho\" (%%-6s): %-6s, %-6s\n", "ho", "ho")
+	fmt.Printf("123 (integer-fixed-width %%6d): %6d\n", 123)
+	fmt.Printf("1.2 (float-fixed-width %%6.2f): %6.2f\n", 1.2)
+	fmt.Printf("1.2, 1.3 (float-left-justify %%-6.2f): %-6.2f, %-6.2f\n", 1.2, 1.3)
+	fmt.Printf("\"hi\" (string-fixed-width %%6s): %6s\n", "hi")
+	fmt.Printf("\"ho\", \"ho\" (string-left-justify %%-6s): %-6s, %-6s\n", "ho", "ho")
 	fmt.Println()
 
 	fmt.Printf("s2 := fmt.Sprintf(\"a %%s\", \"string\")\n")
